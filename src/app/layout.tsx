@@ -9,10 +9,10 @@ const inter = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Julio Perez, Software Engineer",
-  description: "Encuentrás el valor agregado que Julio Perez aporta al mundo de la programación, aprende y participas en un espacio que te suma en tu carrera para ser un programador",
+  description: "Encontrarás el valor agregado que Julio Perez aporta al mundo de la programación, aprende y participa en un espacio que te potencia en tu carrera para ser un programador",
   openGraph: {
     title: 'Julio Perez, Software Engineer',
-    description: 'Encuentrás el valor agregado que Julio Perez aporta al mundo de la programación, aprende y participas en un espacio que te suma en tu carrera para ser un programador',
+    description: 'Encontrarás el valor agregado que Julio Perez aporta al mundo de la programación, aprende y participa en un espacio que te potencia en tu carrera para ser un programador',
     url: 'https://julioperez.dev',
     siteName: 'Julio Perez',
     images: [
