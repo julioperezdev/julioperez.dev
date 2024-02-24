@@ -18,8 +18,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "https://res.cloudinary.com/julioperez-dev/image/upload/v1708787177/cwlxk4uh0injfghxxoel.png",
-        width: 732,
-        height: 873,
+        width: 400,
+        height: 400,
         alt: 'Julio Perez Logo',
       },
     ],
