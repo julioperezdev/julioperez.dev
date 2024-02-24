@@ -1,0 +1,114 @@
+.base {
+    margin-top: 30px;
+    display: grid;
+}
+.content {
+    margin: auto;
+    padding: 20px;
+}
+.buttons {
+    width: 80%;
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+}
+.button {
+    justify-self: center;
+    width: 100px;
+    height: 40px;
+    font-size: 12px;
+    background: rgb(33, 23, 205);
+    background: linear-gradient(90deg, rgba(33, 23, 205, 1) 0%, rgba(9, 9, 121, 1) 24%, rgba(124, 0, 255, 1) 100%);
+}
+.title {
+    font-size: 40px;
+    font-weight: 600;
+    color: rgb(231, 231, 231);
+}
+.paragraph {
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(188, 188, 188);
+}
+.ideImage {
+    border-radius: 10px;
+    width: 90%;
+    margin: auto;
+}
+
+@media only screen and (min-width: 480px) {
+    .buttons {
+        width: 65%;
+    }
+    .button {
+        width: 130px;
+        height: 45px;
+        font-size: 17px;
+    } 
+}
+@media only screen and (min-width: 768px) {
+    .base {
+        margin-top: 80px;
+        grid-template-columns: repeat(2, 50%);
+    }  
+    .buttons {
+        width: 80%;
+    }
+    .button {
+        width: 130px;
+        height: 45px;
+        font-size: 17px;
+    }  
+    .title {
+        font-size: 55px;
+    }  
+    .paragraph {
+        font-size: 20px;
+    }  
+}
+@media only screen and (min-width: 1024px) {
+
+    .base {
+        margin-top: 100px;
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+    }
+    
+    .content {
+        margin: auto;
+        padding: 20px;
+    }
+    
+    
+    .buttons {
+        width: 80%;
+        margin: 30px auto;
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+    }
+    
+    .button {
+        justify-self: center;
+        width: 150px;
+        height: 45px;
+        font-size: 18px;
+        background: rgb(33, 23, 205);
+        background: linear-gradient(90deg, rgba(33, 23, 205, 1) 0%, rgba(9, 9, 121, 1) 24%, rgba(124, 0, 255, 1) 100%);
+    }
+    
+    .title {
+        font-size: 55px;
+        font-weight: 600;
+        color: rgb(231, 231, 231);
+    }
+    
+    .paragraph {
+        font-size: 20px;
+        font-weight: 500;
+        color: rgb(188, 188, 188);
+    }
+    
+    .ideImage {
+        border-radius: 10px;
+    }
+}

@@ -1,0 +1,76 @@
+.base {
+    margin-top: 50px;
+    padding-bottom: 100px;
+}
+.designBase {
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    justify-items: center;
+    align-content: center;
+}
+.particularDesing {
+    padding: 10px;
+    width: 100vw/3;
+}
+.content {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 80% 20%;
+    font-size: 18px;
+    font-style: italic;
+    padding: 20px;
+
+}
+.content>div>p {
+    font-size: 8px;
+}
+.button {
+    display: grid;
+    margin: auto;
+    background: rgb(33, 23, 205);
+    background: linear-gradient(90deg, rgba(33, 23, 205, 1) 0%, rgba(92, 17, 184, 1) 26%, rgba(124, 0, 255, 1) 46%, rgba(222, 0, 255, 1) 100%);
+    font-size: 12px;
+
+}
+@media only screen and (min-width: 480px) {
+    .button {
+        font-size: 14px;
+    }
+
+}
+@media only screen and (min-width: 768px) {
+    .base {
+        margin-top: 100px;
+        display: grid;
+        grid-template-columns: 70% 30%;
+    }
+    .content {
+        padding: 1px;
+    }
+    .imageRDP{
+        width: 300px;
+    }  
+    .content>div>p {
+        font-size: 10px;
+    } 
+    .button {
+        font-size: 12px;
+        margin-top: 40px;  
+    }
+}
+@media only screen and (min-width: 1024px) {
+    .base {
+        grid-template-columns: repeat(2, 50%);
+    } 
+    .content {
+        font-size: 22px;
+        padding: 1px;
+    
+    }
+    .button {
+        font-size: 20px;
+        margin-top: 50px;
+    
+    }
+  
+}
