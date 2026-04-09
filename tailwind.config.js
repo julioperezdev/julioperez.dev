@@ -1,20 +1,64 @@
-// tailwind.config.js
-import {nextui} from "@nextui-org/react";
-
 /** @type {import('tailwindcss').Config} */
 const config = {
   content: [
-
- 
-    // Or if using `src` directory:
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
-    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}"
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        "tertiary-fixed-dim": "#00dbe9",
+        "inverse-primary": "#6c38de",
+        "inverse-on-surface": "#303035",
+        "primary-container": "#9e79ff",
+        "surface-container-low": "#1b1b20",
+        "surface-container-lowest": "#0e0e12",
+        "on-primary-container": "#320081",
+        "tertiary-container": "#00a0aa",
+        "secondary": "#ffade3",
+        "on-secondary": "#5f004f",
+        "error-container": "#93000a",
+        "surface-variant": "#353439",
+        "on-tertiary": "#00363a",
+        "surface-dim": "#131317",
+        "on-secondary-container": "#ffe0f0",
+        "outline": "#948ea1",
+        "on-background": "#e4e1e8",
+        "on-primary-fixed": "#22005d",
+        "background": "#131317",
+        "error": "#ffb4ab",
+        "surface-container-high": "#2a292e",
+        "primary-fixed": "#e9ddff",
+        "primary-fixed-dim": "#cfbdff",
+        "surface-container-highest": "#353439",
+        "on-tertiary-container": "#002f33",
+        "on-surface": "#e4e1e8",
+        "on-surface-variant": "#cbc3d7",
+        "inverse-surface": "#e4e1e8",
+        "outline-variant": "#494455",
+        "surface-tint": "#cfbdff",
+        "surface-bright": "#39393e",
+        "primary": "#cfbdff",
+        "on-primary": "#3a0093",
+        "secondary-container": "#c000a2",
+        "tertiary": "#00dbe9",
+        "surface-container": "#1f1f24",
+        "surface": "#131317",
+      },
+      borderRadius: {
+        DEFAULT: "0.125rem",
+        lg: "0.25rem",
+        xl: "0.5rem",
+        full: "0.75rem",
+      },
+      fontFamily: {
+        headline: ["var(--font-space-grotesk)", "sans-serif"],
+        body: ["var(--font-inter)", "sans-serif"],
+        label: ["var(--font-inter)", "sans-serif"],
+      },
+    },
   },
   darkMode: "class",
-  plugins: [nextui()]
-}
+  plugins: [],
+};
 
 export default config;
