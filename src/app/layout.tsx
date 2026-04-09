@@ -1,30 +1,40 @@
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
+import { Space_Grotesk, Inter } from "next/font/google";
 import "./globals.css";
-import NavbarComponent from "./components/navbar/NavbarComponent"
 
-import { Providers } from "./providers";
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-space-grotesk",
+  display: "swap",
+});
 
-const inter = Montserrat({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  title: "Julio Perez, Software Engineer",
-  description: "Encontrarás el valor agregado que Julio Perez aporta al mundo de la programación, aprende y participa en un espacio que te potencia en tu carrera para ser un programador",
+  metadataBase: new URL("https://julioperez.dev"),
+  title: "julioperez.dev | Backend, Cloud & IA",
+  description:
+    "Comparto contenido técnico sobre sistemas escalables, arquitectura cloud e IA sin rodeos.",
   openGraph: {
-    title: 'Julio Perez, Software Engineer',
-    description: 'Encontrarás el valor agregado que Julio Perez aporta al mundo de la programación, aprende y participa en un espacio que te potencia en tu carrera para ser un programador',
-    url: 'https://julioperez.dev',
-    siteName: 'Julio Perez',
+    title: "julioperez.dev | Backend, Cloud & IA",
+    description:
+      "Comparto contenido técnico sobre sistemas escalables, arquitectura cloud e IA sin rodeos.",
+    url: "https://julioperez.dev",
+    siteName: "Julio Perez",
     images: [
       {
         url: "https://res.cloudinary.com/julioperez-dev/image/upload/v1708787177/cwlxk4uh0injfghxxoel.png",
         width: 400,
         height: 400,
-        alt: 'Julio Perez Logo',
+        alt: "Julio Perez Logo",
       },
     ],
-    type: 'website',
-  }
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -33,13 +43,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className='dark'>
-      <body className={inter.className}>
-        <NavbarComponent/>
-        <Providers>
-          {children}
-        </Providers>
-      </body>
+    <html
+      lang="es"
+      className={`dark ${spaceGrotesk.variable} ${inter.variable}`}
+    >
+      <body className="antialiased">{children}</body>
     </html>
   );
 }

@@ -1,105 +1,84 @@
 'use client'
-import ImageNext from "next/image";
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button, NavbarMenuToggle, NavbarMenu, NavbarMenuItem } from "@nextui-org/react";
-import styles from "./NavbarComponent.module.css"
-import {useState} from "react";
+
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
+
+const navLinks = [
+  { label: "Home", href: "#" },
+  { label: "Libro", href: "#book" },
+  { label: "Ropa de Programador", href: "#store" },
+];
 
 export default function NavbarComponent() {
-
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const menuItems = [
-    {description:"Youtube", url:"https://www.youtube.com/channel/UCcQifbSRJXkn4UxzaCQbeSA", color:'foreground' as 'foreground'},
-    {description:"Instagram", url:"https://www.instagram.com/julioperez.dev/", color:'foreground' as 'foreground'},
-    {description:"Descargar Ebook", url:"#", color:'primary' as 'primary'},
-    {description:"Ver Contenido", url:"https://www.youtube.com/channel/UCcQifbSRJXkn4UxzaCQbeSA", color:'foreground' as 'foreground'},
-    {description:"Asesoria", url:"https://calendly.com/julioperez-contact/30min", color:'foreground' as 'foreground'},
-    {description:"Ropa de Programador", url:"https://julioperez.flashcookie.com", color:'danger' as 'danger'},
-  ];
-
-
-
-  const download = (filename:any, content:any) => {
-    var element = document.createElement("a");
-    element.setAttribute("href", content);
-    element.setAttribute("download", filename);
-    element.style.display = "none";
-    document.body.appendChild(element);
-
-    element.click();
-
-    document.body.removeChild(element);
-  };
-
-  const handleDownload = async (e:any) => {
-    try {
-      const result = await fetch("/documento.pdf", {
-        method: "GET",
-        headers: {}
-      });
-      const blob = await result.blob();
-      const url = URL.createObjectURL(blob);
-      download("Roadmap-Programación-Julio-Pérez", url);
-      URL.revokeObjectURL(url);
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  const preHandleDownload = async (e:any, url:any) => {
-    if(url === "#") handleDownload(e);
-  };
-
-
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <div className={styles.base}>
-      <Navbar shouldHideOnScroll onMenuOpenChange={setIsMenuOpen}>
-        <NavbarContent>
-          <NavbarMenuToggle
-            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-            className="sm:hidden"
-          />
-          <NavbarBrand>
-            <ImageNext src="/logo.png" width={50} height={60} alt="julio perez logo" />
+    <nav className="fixed top-0 w-full z-50 bg-[#131317]/80 backdrop-blur-xl transition-all duration-300">
+      <div className="flex justify-between items-center px-6 md:px-8 h-20 w-full max-w-7xl mx-auto">
+        {/* Logo */}
+        <a
+          href="#"
+          className="text-xl font-bold tracking-tighter text-primary font-headline"
+        >
+          julioperez.dev
+        </a>
 
-            <p className="font-bold text-inherit">JULIO PEREZ</p>
-          </NavbarBrand>
-        </NavbarContent>
-
-        <NavbarContent className="hidden sm:flex gap-4" justify="center">
-          <NavbarItem>
-            <Link color="foreground" href="#" onClick={handleDownload}>
-              Descargar Ebook
-            </Link>
-          </NavbarItem>
-          <NavbarItem isActive>
-            <Link href="https://www.youtube.com/channel/UCcQifbSRJXkn4UxzaCQbeSA" aria-current="page">
-              Youtube
-            </Link>
-          </NavbarItem>
-          <NavbarItem>
-            <Link color="foreground" href="https://www.instagram.com/julioperez.dev/">
-              Instagram
-            </Link>
-          </NavbarItem>
-        </NavbarContent>
-        <NavbarMenu>
-          {menuItems.map((item, index) => (
-            <NavbarMenuItem key={`${item}-${index}`}>
-              <Link
-                color={item.color}
-                className="w-full"
-                href={item.url}
-                size="lg"
-                onClick={(e)=>preHandleDownload(e, item.url)}
-              >
-                {item.description}
-              </Link>
-            </NavbarMenuItem>
+        {/* Desktop nav */}
+        <div className="hidden md:flex items-center space-x-8 font-headline tracking-tight">
+          {navLinks.map((link, i) => (
+            <a
+              key={link.label}
+              href={link.href}
+              className={
+                i === 0
+                  ? "text-primary border-b border-primary/60 pb-0.5 transition-colors duration-300"
+                  : "text-on-surface-variant hover:text-primary transition-colors duration-300"
+              }
+            >
+              {link.label}
+            </a>
           ))}
-        </NavbarMenu>
-      </Navbar>
-    </div>
-  )
+        </div>
+
+        {/* CTA + mobile toggle */}
+        <div className="flex items-center gap-4">
+          <a
+            href="mailto:contacto@julioperez.dev"
+            className="hidden md:inline-flex cursor-pointer bg-transparent border border-outline-variant/30 text-primary px-6 py-2 rounded-lg font-headline font-medium hover:bg-surface-container-high transition-all active:scale-95 duration-200"
+          >
+            Contacto
+          </a>
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="md:hidden text-on-surface p-2 cursor-pointer"
+            aria-label="Toggle menu"
+          >
+            {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile menu */}
+      {mobileOpen && (
+        <div className="md:hidden bg-surface-container-low border-t border-outline-variant/10 px-6 py-4 flex flex-col gap-4">
+          {navLinks.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              onClick={() => setMobileOpen(false)}
+              className="text-on-surface-variant hover:text-primary transition-colors font-headline py-1"
+            >
+              {link.label}
+            </a>
+          ))}
+          <a
+            href="mailto:contacto@julioperez.dev"
+            className="mt-2 inline-flex justify-center cursor-pointer border border-outline-variant/30 text-primary px-6 py-2 rounded-lg font-headline font-medium hover:bg-surface-container-high transition-all"
+          >
+            Contacto
+          </a>
+        </div>
+      )}
+    </nav>
+  );
 }
