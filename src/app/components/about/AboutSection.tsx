@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-32 bg-surface-dim relative overflow-hidden">
+    <section id="about" className="py-20 md:py-32 bg-surface-dim relative overflow-hidden">
       <div className="max-w-2xl mx-auto px-6 md:px-8 text-center relative z-10">
 
         <div className="mb-10 inline-block">
@@ -34,7 +34,7 @@ export default function AboutSection() {
           </span>
         </p>
 
-        <div className="mt-12 flex justify-center gap-8">
+        <div className="mt-10 md:mt-12 flex flex-wrap justify-center gap-6 md:gap-8">
           <a
             href="https://www.instagram.com/julioperez.dev/"
             target="_blank"

@@ -41,7 +41,7 @@ export default function RopaSection() {
               href="https://ropadeprogramador.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-shrink-0 flex items-center gap-2 border border-secondary/40 text-secondary font-headline font-bold px-7 py-3 rounded-lg hover:bg-secondary/10 transition-all cursor-pointer"
+              className="w-full sm:w-auto flex items-center justify-center gap-2 border border-secondary/40 text-secondary font-headline font-bold px-7 py-3 rounded-lg hover:bg-secondary/10 transition-all cursor-pointer"
             >
               Ver tienda
               <ArrowRight size={16} />

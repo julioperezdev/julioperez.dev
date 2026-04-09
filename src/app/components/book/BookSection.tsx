@@ -48,10 +48,10 @@ export default function BookSection() {
         </div>
 
         {/* 2-column grid */}
-        <div className="grid md:grid-cols-2 gap-16 items-center">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
 
           {/* LEFT — Real book cover */}
-          <div className="flex flex-col items-center md:items-start gap-10">
+          <div className="flex flex-col items-center md:items-start gap-8 md:gap-10">
             {/* Book with depth effect */}
             <div className="relative select-none">
               {/* Page depth layers */}
@@ -98,7 +98,7 @@ export default function BookSection() {
           </div>
 
           {/* RIGHT — Checkout form */}
-          <div className="bg-surface-container-lowest rounded-xl border border-outline-variant/10 p-8">
+          <div className="bg-surface-container-lowest rounded-xl border border-outline-variant/10 p-5 md:p-8">
             {/* Price */}
             <div className="mb-8">
               <p className="text-xs font-label uppercase tracking-widest text-on-surface-variant mb-1">

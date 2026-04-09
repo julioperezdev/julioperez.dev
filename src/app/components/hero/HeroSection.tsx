@@ -2,12 +2,15 @@ import Image from "next/image";
 import { ArrowRight, Play } from "lucide-react";
 
 const reelTopics = [
-  { bg: "bg-surface-container-high", label: "Go" },
-  { bg: "bg-surface-container", label: "Kubernetes" },
-  { bg: "bg-surface-container-high", label: "PostgreSQL" },
-  { bg: "bg-surface-container", label: "Docker" },
-  { bg: "bg-surface-container-high", label: "Terraform" },
-  { bg: "bg-surface-container", label: "LLMs" },
+  { bg: "bg-surface-container-high", label: "Java" },
+  { bg: "bg-surface-container", label: "Spring Boot" },
+  { bg: "bg-surface-container-high", label: "SQL" },
+  { bg: "bg-surface-container", label: "AWS" },
+  { bg: "bg-surface-container-high", label: "Docker" },
+  { bg: "bg-surface-container", label: "AI" },
+  { bg: "bg-surface-container-high", label: "DevOps" },
+  { bg: "bg-surface-container", label: "Grafana" },
+  { bg: "bg-surface-container-high", label: "Clean Arch" },
 ];
 
 const topics = [
@@ -18,11 +21,11 @@ const topics = [
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-[921px] flex items-center justify-center overflow-hidden neo-noir-grid">
-      <div className="max-w-7xl mx-auto px-6 md:px-8 w-full relative z-10 grid md:grid-cols-2 gap-16 items-center py-24">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden neo-noir-grid">
+      <div className="max-w-7xl mx-auto px-6 md:px-8 w-full relative z-10 grid md:grid-cols-2 gap-8 md:gap-16 items-center py-16 md:py-24">
 
         {/* Left column */}
-        <div className="space-y-8">
+        <div className="space-y-6 md:space-y-8">
           <div className="inline-flex items-center space-x-2 bg-surface-container-high px-3 py-1 rounded-sm border border-outline-variant/10">
             <span className="w-2 h-2 rounded-full bg-tertiary animate-pulse" />
             <span className="text-[10px] uppercase tracking-widest font-label font-semibold text-on-surface-variant">
@@ -30,19 +33,19 @@ export default function HeroSection() {
             </span>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-headline font-bold leading-[0.95] tracking-tighter text-on-surface">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-headline font-bold leading-[0.95] tracking-tighter text-on-surface">
             Aprende<br />
             <span className="text-primary italic">sistemas reales.</span><br />
             Sin rodeos.
           </h1>
 
-          <p className="text-xl text-on-surface-variant font-body max-w-xl leading-relaxed">
+          <p className="text-lg md:text-xl text-on-surface-variant font-body max-w-xl leading-relaxed">
             Creo contenido técnico sobre Backend, Cloud e IA en Instagram.
             Directo al punto, con código real.
           </p>
 
           {/* Topic chips */}
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-wrap gap-2 md:gap-3">
             {topics.map((t) => (
               <span
                 key={t.label}
@@ -53,29 +56,28 @@ export default function HeroSection() {
             ))}
           </div>
 
-          <div className="flex flex-wrap gap-4 pt-2">
+          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 pt-2">
             <a
               href="https://www.instagram.com/julioperez.dev/"
               target="_blank"
               rel="noopener noreferrer"
-              className="primary-gradient-cta text-on-primary font-headline font-bold px-8 py-4 rounded-lg text-base hover:shadow-[0_0_30px_rgba(207,189,255,0.3)] transition-all cursor-pointer flex items-center gap-2"
+              className="primary-gradient-cta text-on-primary font-headline font-bold px-8 py-4 rounded-lg text-base hover:shadow-[0_0_30px_rgba(207,189,255,0.3)] transition-all cursor-pointer flex items-center justify-center gap-2"
             >
               Seguir en Instagram
               <ArrowRight size={18} />
             </a>
             <a
               href="#book"
-              className="border border-outline-variant/30 text-on-surface font-headline font-bold px-8 py-4 rounded-lg text-base hover:bg-surface-container-low transition-all cursor-pointer"
+              className="border border-outline-variant/30 text-on-surface font-headline font-bold px-8 py-4 rounded-lg text-base hover:bg-surface-container-low transition-all cursor-pointer text-center"
             >
               Ver el libro
             </a>
           </div>
         </div>
 
-        {/* Right column — Instagram profile mockup */}
+        {/* Right column — hidden on mobile */}
         <div className="hidden md:flex justify-center">
-          <div className="w-72 bg-surface-container-lowest rounded-2xl border border-outline-variant/15 overflow-hidden shadow-2xl">
-            {/* Top bar */}
+          <div className="w-80 bg-surface-container-lowest rounded-2xl border border-outline-variant/15 overflow-hidden shadow-2xl">
             <div className="flex items-center justify-between px-4 py-3 border-b border-outline-variant/10">
               <span className="text-xs font-label text-on-surface-variant tracking-wide">Instagram</span>
               <div className="flex gap-1.5">
@@ -85,7 +87,6 @@ export default function HeroSection() {
               </div>
             </div>
 
-            {/* Profile header */}
             <div className="px-5 py-4">
               <div className="flex items-center gap-4 mb-4">
                 <div className="w-14 h-14 rounded-full border-2 border-primary/40 p-0.5 flex-shrink-0 overflow-hidden">
@@ -102,13 +103,11 @@ export default function HeroSection() {
                   <p className="text-[11px] text-on-surface-variant font-body mt-0.5">Backend · Cloud · IA</p>
                 </div>
               </div>
-
-              {/* Bio */}
-              <p className="text-[11px] text-on-surface-variant font-body leading-relaxed mb-4">
-                Sistemas escalables, arquitectura cloud e IA aplicada. Sin filtros. 🚀
-              </p>
-
-              {/* Follow button */}
+              <div className="text-[11px] text-on-surface-variant font-body leading-relaxed mb-4 space-y-1">
+                <p>💻 | Te guiaré para que conozcas más de Backend</p>
+                <p>🤖 | Haré un Agente de IA por semana</p>
+                <p>🚀 | Compartiré mi progreso y aprendizaje</p>
+              </div>
               <a
                 href="https://www.instagram.com/julioperez.dev/"
                 target="_blank"
@@ -119,7 +118,6 @@ export default function HeroSection() {
               </a>
             </div>
 
-            {/* Content grid — topics */}
             <div className="grid grid-cols-3 gap-0.5">
               {reelTopics.map((reel, i) => (
                 <div
