@@ -16,6 +16,12 @@ export default function Footer() {
             Términos y condiciones
           </a>
           <a
+            href="/privacidad"
+            className="font-body text-xs uppercase tracking-widest text-on-surface-variant/50 hover:text-tertiary transition-all opacity-80 hover:opacity-100"
+          >
+            Política de privacidad
+          </a>
+          <a
             href="mailto:contacto@julioperez.dev"
             className="font-body text-xs uppercase tracking-widest text-on-surface-variant/50 hover:text-tertiary transition-all opacity-80 hover:opacity-100"
           >
