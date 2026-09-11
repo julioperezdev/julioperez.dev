@@ -39,6 +39,13 @@ export default function TerminosPage() {
             Al acceder y utilizar julioperez.dev, y al realizar compras en este sitio, aceptás los
             siguientes términos y condiciones. Leelos con atención antes de realizar cualquier transacción.
           </p>
+          <p className="mt-4 text-sm text-on-surface-variant font-body leading-relaxed">
+            El tratamiento de datos personales se describe en nuestra{" "}
+            <Link href="/privacidad" className="text-primary hover:underline">
+              Política de Privacidad
+            </Link>
+            .
+          </p>
         </div>
 
         <div className="space-y-10 font-body text-on-surface-variant leading-relaxed">
@@ -156,15 +163,21 @@ export default function TerminosPage() {
           {/* 7 */}
           <div>
             <h2 className="text-xl font-headline font-bold text-on-surface mb-3">
-              7. Tratamiento de datos personales
+              7. Tratamiento de datos personales en compras digitales
             </h2>
             <p>
-              Los datos personales (nombre, email) recopilados durante el proceso de compra se utilizan
-              exclusivamente para procesar la transacción y entregar el producto adquirido.
+              Los datos personales (nombre, email) recopilados durante una compra digital se utilizan
+              exclusivamente para procesar la transacción y entregar el producto adquirido. El tratamiento
+              asociado al servicio Wally Customer Support se describe en la{" "}
+              <Link href="/privacidad" className="text-primary hover:underline">
+                Política de Privacidad
+              </Link>
+              .
             </p>
             <p className="mt-2">
-              No se comparten datos con terceros, excepto con las plataformas de pago necesarias para
-              completar la transacción. Podés solicitar la eliminación de tus datos en cualquier momento
+              En el marco de una compra digital, no se comparten datos con terceros, excepto con las
+              plataformas de pago necesarias para completar la transacción. Podés solicitar la eliminación
+              de tus datos en cualquier momento
               escribiendo a{" "}
               <a
                 href="mailto:contacto@julioperez.dev"
